@@ -1,8 +1,23 @@
 import { useState } from "react";
 
 let numbers = [64, 84, 22, 32, 83, 65, 51, 26, 23, 56];
+let names = [
+  "Shea",
+  "Ewing",
+  "Yang",
+  "Mcintosh",
+  "Castillo",
+  "Cunningham",
+  "Johnston",
+  "Mckay",
+  "Roberson",
+  "Perez",
+  "Dudley",
+  "Wood",
+];
 function App() {
   const [filteredNumbers, setFilteredNumbers] = useState(numbers);
+  const [searchValue, setSearchValue] = useState("");
 
   const radioChangeHandler = (e) => {
     const value = e.target.value;
@@ -49,6 +64,21 @@ function App() {
         {filteredNumbers.map((number) => {
           return <li key={number}>{number} </li>;
         })}
+      </ul>
+
+      <h2>Search filtering</h2>
+      <input
+        type="text"
+        name="search"
+        value={searchValue}
+        onChange={(e) => setSearchValue(e.target.value)}
+      />
+      <ul>
+        {names
+          .filter((name) => name.match(new RegExp(searchValue, "i")))
+          .map((name) => {
+            return <li key={name}>{name} </li>;
+          })}
       </ul>
     </div>
   );
