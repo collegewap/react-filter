@@ -42,12 +42,11 @@ label {
 }
 
 .dropdown-list ul {
-  border: 1px solid gray;
+  border: 1px solid grey;
   margin: 0;
   padding: 0;
   display: inline-block;
   width: 186px;
-  /* padding: 1px 3px; */
   max-height: 200px;
   overflow-y: scroll;
   border-top: none;
@@ -56,7 +55,6 @@ label {
   list-style: none;
   padding: 5px;
   cursor: pointer;
-  /* border-bottom: 1px solid gray; */
 }
 
 .dropdown-list li:hover {
